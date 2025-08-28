@@ -26,10 +26,10 @@ public class HotelService {
         hotel.setName(dto.getName());
 
         List<Room> rooms = new ArrayList<>();
-        Room room = new Room();
 
         for(RoomDto r : dto.getRooms()){
-            room.setRoomType(r.getRoomType().toString());
+            Room room = new Room();
+            room.setRoomType(r.getRoomType());
             room.setRoomCount(r.getRoomCount());
             room.setId(r.getId());
             room.setHotel(hotel);

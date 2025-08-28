@@ -18,7 +18,7 @@ public class Room {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(referencedColumnName = "id")
+    @JoinColumn(name = "hotel_id", referencedColumnName = "id")
     @JsonIgnore
     private Hotel hotel;
 

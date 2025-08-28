@@ -12,7 +12,7 @@ public class RoomDto {
 
     private Long id;
 
-    private RoomType roomType;
+    private String roomType;
 
     private int roomCount;
 }

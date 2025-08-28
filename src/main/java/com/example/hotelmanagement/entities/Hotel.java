@@ -2,7 +2,6 @@ package com.example.hotelmanagement.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,14 +18,14 @@ public class Hotel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     @Column(unique = true, nullable = false)
     private String name;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Room> rooms;
+    private List<Room> rooms = new ArrayList<>();
 
 }
